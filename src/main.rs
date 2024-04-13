@@ -3,6 +3,8 @@ mod enviroment;
 
 use bevy::prelude::*;
 
+const SPRITE_SIZE: f32 = 8.0;
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins

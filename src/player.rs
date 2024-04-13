@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use crate::SPRITE_SIZE;
 
 pub struct PlayerPlugin;
 
@@ -17,7 +18,7 @@ impl Plugin for PlayerPlugin {
 fn spawn_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     commands.spawn((SpriteBundle {
         texture: asset_server.load("wizard.png"),
-        transform: Transform::from_scale(Vec3::splat(8.0)),
+        transform: Transform::from_scale(Vec3::splat(SPRITE_SIZE)),
         ..Default::default()
         },
         Player
