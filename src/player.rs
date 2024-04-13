@@ -46,20 +46,17 @@ fn move_player(
 
     input = input.normalize_or_zero() * 500.0 * time.delta_seconds();
 
-    if input.length() < 0.1 {
-        return;
-    }
-
     for mut transform in query.iter_mut() {
+        // moving the player
         transform.translation.x += input.x;
         transform.translation.y += input.y;
 
+        // flipping the player sprite
         if input.x < 0.0 && transform.scale.x < 0.0 {
             transform.scale.x = transform.scale.x.abs();
         }
         else if input.x > 0.0 && transform.scale.x > 0.0 {
             transform.scale.x *= -1.0;
         } 
-
     }
 }
