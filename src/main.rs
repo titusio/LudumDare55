@@ -1,4 +1,5 @@
 mod player;
+mod enviroment;
 
 use bevy::prelude::*;
 
@@ -8,6 +9,7 @@ fn main() {
              .set(ImagePlugin::default_nearest())
         )
         .add_plugins(player::PlayerPlugin)
+        .add_plugins(enviroment::EnviromentPlugin)
         .add_systems(Startup, setup_world)
         .run();
 }
